@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">열화상측정</string>
+    <string name="devices">USB Devices</string>
+    <string name="shared_preferences">appConfig</string>
+    <string name="exit_message">앱을 종료하시겠습니까?</string>
+    <string name="attend_search1">조회결과 (총 </string>
+    <string name="attend_search2">개)</string>
+    <string name="config_sub_id">아이디</string>
+    <string name="config_sub_pw">암호</string>
+    <string name="config_sub_co">회사명</string>
+    <string name="camera_fail">출입 불가능</string>
+    <string name="camera_success">정상입니다</string>
+    <string name="camera_data">체온 </string>
+    <string name="admin_title">탑승객 체온 관리</string>
+    <string name="admin_btn_start">출입체크 시작</string>
+    <string name="admin_btn_search">출입체크 조회</string>
+    <string name="attend_title">출입자 조회</string>
+    <string name="attend_search_btn">조회</string>
+    <string name="info_title">출입자 조회</string>
+    <string name="config_title">설정</string>
+    <string name="config_user">사용자 설정</string>
+    <string name="config_ex">예외 처리</string>
+    <string name="config_noti">알림</string>
+    <string name="config_lang">언어</string>
+    <string name="barcode_title">QR 코드를 사각형 안에 비춰주세요</string>
+    <string name="not_device">연결된 열화상 장비가 없습니다</string>
+    <string name="user_id">아이디</string>
+    <string name="user_pw">비밀번호</string>
+    <string name="user_pw_confirm">비밀번호 확인</string>
+    <string name="user_company">회사명</string>
+    <string name="auto">로그인 상태 유지</string>
+    <string name="login">로그인</string>
+    <string name="user_modify">사용자 정보가 변경되었습니다.</string>
+    <string name="confirm">비밀번호 확인</string>
+    <string name="pw_fail">비밀번호가 일치하지 않습니다.</string>
+    <string name="modify">변경완료</string>
+    <string name="logout">로그아웃</string>
+    <string name="logout_confirm">로그아웃 하시겠습니까?</string>
+    <string name="area">온도측정 영역</string>
+    <string name="modify_title">사용자 정보를 변경하시겠습니까?</string>
+    <string name="login_fail">로그인에 실패하였습니다.</string>
+    <string name="server_fail">서버 연결에 실패하였습니다.</string>
+    <string name="login_modify">로그인 정보 수정</string>
+    <string name="login_success">로그인 정보 수정 성공</string>
+    <string name="login_null">로그인 정보가 존재하지 않습니다.\n설정에서 사용자 정보를 입력하세요.</string>
+</resources>

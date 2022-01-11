@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">열화상측정</string>
+    <string name="devices">USB Devices</string>
+    <string name="shared_preferences">appConfig</string>
+    <string name="exit_message">您确定要关闭该应用程序吗？</string>
+    <string name="attend_search1">搜索结果(总计</string>
+    <string name="attend_search2">件)</string>
+    <string name="config_sub_id">ID</string>
+    <string name="config_sub_pw">密码</string>
+    <string name="config_sub_co">公司名</string>
+    <string name="camera_fail">没有访问权限</string>
+    <string name="camera_success">这是正常的</string>
+    <string name="camera_data">温度</string>
+    <string name="admin_title">乘客体温管理</string>
+    <string name="admin_btn_start">开始签到</string>
+    <string name="admin_btn_search">访问检查查询</string>
+    <string name="attend_title">访客查询</string>
+    <string name="attend_search_btn">抬头</string>
+    <string name="info_title">访客查询</string>
+    <string name="config_title">环境</string>
+    <string name="config_user">用户设置</string>
+    <string name="config_ex">异常处理</string>
+    <string name="config_noti">注意</string>
+    <string name="config_lang">语</string>
+    <string name="barcode_title">请把方格内的条码擦亮</string>
+    <string name="not_device">未连接热像仪</string>
+    <string name="user_id">ID</string>
+    <string name="user_pw">密码</string>
+    <string name="user_pw_confirm">验证密码</string>
+    <string name="user_company">公司名</string>
+    <string name="auto">保持登录</string>
+    <string name="login">登录</string>
+    <string name="user_modify">用户信息已更改</string>
+    <string name="confirm">验证密码</string>
+    <string name="pw_fail">密码不匹配</string>
+    <string name="modify">更改完成</string>
+    <string name="logout">登出</string>
+    <string name="logout_confirm">您确定要退出吗?</string>
+    <string name="area">测温区</string>
+    <string name="modify_title">您要更改用户信息吗?</string>
+    <string name="login_fail">登录失败.</string>
+    <string name="server_fail">无法连接服务器.</string>
+    <string name="login_modify">编辑您的登录信息</string>
+    <string name="login_success">登录信息修改成功</string>
+    <string name="login_null">登录信息不存在.\n请在设置中输入用户信息.</string>
+</resources>
