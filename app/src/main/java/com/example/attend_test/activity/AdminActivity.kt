@@ -39,7 +39,7 @@ import java.util.*
 class AdminActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityAdminBinding
-
+    //test
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAdminBinding.inflate(layoutInflater)
