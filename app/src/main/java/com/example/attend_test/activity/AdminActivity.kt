@@ -57,7 +57,7 @@ class AdminActivity : AppCompatActivity() {
         //출입체크 시작 버튼 클릭 리스너
         binding.adminBtnStart.setOnClickListener{
             //로그인 체크
-            if ((applicationContext as AttendApplication).isLoginResult) {
+            /*if ((applicationContext as AttendApplication).isLoginResult) {
                 //로그인 O
                 val intent = Intent(this, ResultActivity::class.java)
                 startActivity(intent)
@@ -67,7 +67,7 @@ class AdminActivity : AppCompatActivity() {
                 //로그인 X
                 Toast.makeText(this, R.string.login_null, Toast.LENGTH_SHORT).show()
             }
-            Toast.makeText(this, "start button click", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "start button click", Toast.LENGTH_SHORT).show()*/
         }
         //출입체크 조회 버튼 클릭 리스너
         binding.adminBtnSearch.setOnClickListener{
@@ -94,8 +94,8 @@ class AdminActivity : AppCompatActivity() {
     }
 
     //언어 선택
-    /*private val langSetting: Unit
-        private get() {
+    private val langSetting: Unit
+        get() {
             val sharedPref: SharedPreferences =
                 getSharedPreferences(getString(R.string.shared_preferences), Context.MODE_PRIVATE)
             val lang: String = sharedPref.getString("app_lang", "ko").toString()
@@ -104,7 +104,7 @@ class AdminActivity : AppCompatActivity() {
             val config = Configuration()
             config.locale = locale
             resources.updateConfiguration(config, resources.displayMetrics)
-        }//실패//자동 로그인//성공*/
+        }//실패//자동 로그인//성공
 
     //델리넷 인터페이스 API 호출 + 자동로그인
     //first.asp
@@ -209,7 +209,7 @@ class AdminActivity : AppCompatActivity() {
     override fun onBackPressed() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(getString(R.string.app_name))
-            .setMessage(getString(R.string.app_name).toString() + " " + getString(R.string.exit_message))
+            .setMessage(getString(R.string.app_name) + " " + getString(R.string.exit_message))
             .setPositiveButton("OK"){_,_ -> finish()}
             .setNegativeButton("CANCEL", null)
             .create().show()
