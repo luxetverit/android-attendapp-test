@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".activity.AttendActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/attend_guide1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.07"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/attend_guide2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.93"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/attend_title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.86"
+        app:layout_constraintHeight_percent="0.07"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/attend_guide1"
+        app:layout_constraintRight_toRightOf="@id/attend_guide2"
+        app:layout_constraintBottom_toTopOf="@id/attend_search">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/attend_back"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintWidth_percent="0.1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_btn_back"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/admin_btn_search"
+            android:textStyle="normal"
+            android:textSize="15dp"
+            android:textColor="#707070"
+            android:lineSpacingExtra="5.5sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/attend_search"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.86"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintTop_toBottomOf="@id/attend_title"
+        app:layout_constraintLeft_toLeftOf="@id/attend_guide1"
+        app:layout_constraintRight_toRightOf="@id/attend_guide2"
+        app:layout_constraintBottom_toTopOf="@id/attend_table_title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/attend_search_date"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.25"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/attend_search_box">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/attend_start_box"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/btn_border_gray"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintWidth_percent="0.47"
+                app:layout_constraintHeight_percent="0.85"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/attend_date_txt"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <ImageView
+                    android:id="@+id/attend_start_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/btn_date"
+                    app:layout_constraintWidth_percent="0.35"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/attend_start_txt"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/attend_start_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="2021.10.02"
+                    android:textStyle="normal"
+                    android:textSize="15dp"
+                    android:textColor="#5c5c5c"
+                    android:lineSpacingExtra="4.5sp"
+                    android:gravity="center"
+                    android:background="@drawable/btn_border_left_gray"
+                    app:layout_constraintWidth_percent="0.65"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/attend_start_date"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/attend_date_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textStyle="normal"
+                android:textSize="18dp"
+                android:textColor="#b1b1b1"
+                android:lineSpacingExtra="9.5sp"
+                android:layout_marginRight="4.5dp"
+                android:layout_marginLeft="4.5dp"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/attend_end_box"
+                app:layout_constraintLeft_toRightOf="@id/attend_start_box"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/attend_end_box"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/btn_border_gray"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintWidth_percent="0.47"
+                app:layout_constraintHeight_percent="0.85"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/attend_date_txt"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <ImageView
+                    android:id="@+id/attend_end_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/btn_date"
+                    app:layout_constraintWidth_percent="0.35"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/attend_end_txt"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/attend_end_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="2021.10.02"
+                    android:textStyle="normal"
+                    android:textSize="15dp"
+                    android:textColor="#5c5c5c"
+                    android:lineSpacingExtra="4.5sp"
+                    android:gravity="center"
+                    android:background="@drawable/btn_border_left_gray"
+                    app:layout_constraintWidth_percent="0.65"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/attend_end_date"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/attend_search_box"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.25"
+            app:layout_constraintTop_toBottomOf="@id/attend_search_date"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/attend_search_btn">
+
+            <TextView
+                android:id="@+id/attend_search_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="ENG Name"
+                android:textStyle="normal"
+                android:textSize="13dp"
+                android:textColor="#c7c7c7"
+                android:lineSpacingExtra="4.5sp"
+                android:gravity="left"
+                app:layout_constraintWidth_percent="0.19"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/attend_search_input"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <EditText
+                android:id="@+id/attend_search_input"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:inputType="textPersonName"
+                android:textSize="16dp"
+                android:textColor="#000000"
+                android:paddingLeft="12dp"
+                app:layout_constraintWidth_percent="0.81"
+                app:layout_constraintHeight_percent="0.85"
+                android:background="@drawable/btn_border_gray"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/attend_search_name"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/attend_search_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.29"
+            app:layout_constraintTop_toBottomOf="@id/attend_search_box"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/btn_round_mauve"
+                app:layout_constraintHeight_percent="0.8"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+                <ImageView
+                    android:id="@+id/attend_search_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/btn_search_icon"
+                    android:layout_marginRight="4dp"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/attend_search_txt"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/attend_search_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/attend_search_btn"
+                    android:textStyle="normal"
+                    android:textSize="14dp"
+                    android:textColor="#ffffff"
+                    android:lineSpacingExtra="5.5sp"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/attend_search_img"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/attend_table_title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.86"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintTop_toBottomOf="@id/attend_search"
+        app:layout_constraintLeft_toLeftOf="@id/attend_guide1"
+        app:layout_constraintRight_toRightOf="@id/attend_guide2"
+        app:layout_constraintBottom_toTopOf="@id/attend_table">
+
+        <TextView
+            android:id="@+id/attend_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="15dp"
+            android:textColor="#5c5c5c"
+            android:lineSpacingExtra="4.5sp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/attend_table"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.52"
+        app:layout_constraintTop_toBottomOf="@id/attend_table_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/attend_paging">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/attend_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/attend_paging"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.86"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintTop_toBottomOf="@id/attend_table"
+        app:layout_constraintLeft_toLeftOf="@id/attend_guide1"
+        app:layout_constraintRight_toRightOf="@id/attend_guide2"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.lakue.pagingbutton.LakuePagingButton
+            android:id="@+id/lpb_buttonlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.convert_attendapp_javatokotlin.activity
+package com.example.attend_test.activity
 
 import android.content.Context
 import android.content.DialogInterface
@@ -15,11 +15,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.attend_test.R
 import com.example.attend_test.databinding.ActivityAdminBinding
-import com.example.convert_attendapp_javatokotlin.AttendApplication
-import com.example.convert_attendapp_javatokotlin.R
-import com.example.convert_attendapp_javatokotlin.databinding.ActivityAdminBinding
-import com.example.convert_attendapp_javatokotlin.network.AttendService
-import com.example.convert_attendapp_javatokotlin.network.model.ResultSaveData
+import com.example.attend_test.AttendApplication
+import com.example.attend_test.network.AttendService
+import com.example.attend_test.network.model.ResultSaveData
 import okhttp3.ResponseBody
 import org.json.JSONArray
 import org.json.JSONException
@@ -57,7 +55,7 @@ class AdminActivity : AppCompatActivity() {
     //DESIGN UI
     fun designUI() {
         //출입체크 시작 버튼 클릭 리스너
-        binding.BtnStart.setOnClickListener{
+        binding.adminBtnStart.setOnClickListener{
             //로그인 체크
             if ((applicationContext as AttendApplication).isLoginResult) {
                 //로그인 O
@@ -69,9 +67,10 @@ class AdminActivity : AppCompatActivity() {
                 //로그인 X
                 Toast.makeText(this, R.string.login_null, Toast.LENGTH_SHORT).show()
             }
+            Toast.makeText(this, "start button click", Toast.LENGTH_SHORT).show()
         }
         //출입체크 조회 버튼 클릭 리스너
-        binding.BtnSearch.setOnClickListener{
+        binding.adminBtnSearch.setOnClickListener{
             //로그인 체크
             if ((applicationContext as AttendApplication).isLoginResult) {
                 //로그인 O
@@ -83,14 +82,15 @@ class AdminActivity : AppCompatActivity() {
                 //로그인 X
                 Toast.makeText(this, R.string.login_null, Toast.LENGTH_SHORT).show()
             }
+            //Toast.makeText(this, "search button click", Toast.LENGTH_SHORT).show()
         }
         //설정 버튼 클릭 리스너
-        /*findViewById<View>(R.id.admin_config).setOnClickListener(View.OnClickListener { v: View? ->
+        findViewById<View>(R.id.admin_config).setOnClickListener(View.OnClickListener { v: View? ->
             val intent = Intent(this, ConfigActivity::class.java)
             startActivity(intent)
             overridePendingTransition(0, 0)
             finish()
-        })*/
+        })
     }
 
     //언어 선택
@@ -210,9 +210,7 @@ class AdminActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(getString(R.string.app_name))
             .setMessage(getString(R.string.app_name).toString() + " " + getString(R.string.exit_message))
-            .setPositiveButton(
-                "OK",
-                DialogInterface.OnClickListener { dialog: DialogInterface?, which: Int -> finish() })
+            .setPositiveButton("OK"){_,_ -> finish()}
             .setNegativeButton("CANCEL", null)
             .create().show()
     }
