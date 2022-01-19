@@ -91,6 +91,7 @@ class AdminActivity : AppCompatActivity() {
             overridePendingTransition(0, 0)
             finish()
         })
+        branchTest()
     }
 
     //언어 선택
@@ -105,6 +106,10 @@ class AdminActivity : AppCompatActivity() {
             config.locale = locale
             resources.updateConfiguration(config, resources.displayMetrics)
         }//실패//자동 로그인//성공
+
+    private fun branchTest() {
+        Toast.makeText(this, "", Toast.LENGTH_LONG).show()
+    }
 
     //델리넷 인터페이스 API 호출 + 자동로그인
     //first.asp
