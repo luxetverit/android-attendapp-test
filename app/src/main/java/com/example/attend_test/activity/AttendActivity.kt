@@ -10,18 +10,22 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.attend_test.R
+import com.example.attend_test.adapter.AttendAdapter
 import com.example.attend_test.databinding.ActivityAttendBinding
+import com.example.attend_test.sqlite.DBHandler
+import com.example.attend_test.sqlite.model.Attend
 import com.lakue.pagingbutton.LakuePagingButton
 import com.lakue.pagingbutton.OnPageSelectListener
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.ceil
 
 /**
  * 출입체크조회
  */
 class AttendActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAttendBinding
-
+    private var dbHandler: DBHandler? = null
     var max_page = 1
     var count = 0
     var page = 1
@@ -75,7 +79,7 @@ class AttendActivity : AppCompatActivity() {
         binding.attendEndBox.setOnClickListener{
             DatePickerDialog(
                 this,
-                { view: DatePicker?, year: Int, month: Int, dayOfMonth: Int ->
+                { _: DatePicker?, year: Int, month: Int, dayOfMonth: Int ->
                     binding.attendEndTxt.text =
                         String.format("%d-%d-%d", year, month + 1, dayOfMonth)
                 },
@@ -87,43 +91,43 @@ class AttendActivity : AppCompatActivity() {
         //출입 조회 버튼 클릭 리스너
         binding.attendSearchBtn.setOnClickListener {
             page = 1
-            //attendDataList
+            attendDataList
             pagingUI()
         }
         //뒤로가기 클릭 리스너
         binding.attendBack.setOnClickListener { v: View? -> backPressed() }
-        //attendDataList
+        attendDataList
         pagingUI()
     }
 
     //출입 데이터 전체 가져오기
-    /*val attendDataList: Unit
+    val attendDataList: Unit
         get() {
             val attendAdapter = AttendAdapter()
             binding.attendResult.adapter = attendAdapter
             binding.attendResult.layoutManager = LinearLayoutManager(this)
             dbHandler = DBHandler.open(this)
-            count = dbHandler.selectAttendCount(
+            count = dbHandler!!.selectAttendCount(
                 binding.attendSearchInput.text.toString(), //text 가 get 이었음, 다른건 set (gettext, settext)
                 binding.attendStartTxt.text.toString(),
                 binding.attendEndTxt.text.toString()
             )
             binding.attendCount.text = getString(R.string.attend_search1) + count + getString(R.string.attend_search2)
-            val attendList: ArrayList<Attend> = dbHandler.selectAttendAll(
+            val attendList: ArrayList<Attend> = dbHandler!!.selectAttendAll(
                 binding.attendSearchInput.text.toString(),
                 binding.attendStartTxt.text.toString(),
                 binding.attendEndTxt.text.toString(),
                 (page - 1) * 10
             )
-            dbHandler.close()
+            dbHandler!!.close()
             attendAdapter.setAttendList(attendList)
-        }*/
+        }
 
     //PAGING UI
     private fun pagingUI() {
         //한 번에 표시되는 버튼 수 (기본값 : 5)
         binding.lpbButtonlist.setPageItemCount(5)
-        max_page = Math.ceil(count.toDouble() / 10).toInt()
+        max_page = ceil(count.toDouble() / 10).toInt()
         //총 페이지 버튼 수와 현재 페이지 설정
         binding.lpbButtonlist.addBottomPageButton(max_page, page)
         //페이지 리스너를 클릭 했을 때의 이벤트

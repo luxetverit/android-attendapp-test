@@ -18,6 +18,7 @@ import com.example.attend_test.databinding.ActivityAdminBinding
 import com.example.attend_test.AttendApplication
 import com.example.attend_test.network.AttendService
 import com.example.attend_test.network.model.ResultSaveData
+import com.example.attend_test.zxing.ResultActivity
 import okhttp3.ResponseBody
 import org.json.JSONArray
 import org.json.JSONException
@@ -33,7 +34,6 @@ import java.util.*
 /**
  * 메인화면 (첫 화면)
  */
-@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class AdminActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityAdminBinding
@@ -57,7 +57,7 @@ class AdminActivity : AppCompatActivity() {
         //출입체크 시작 버튼 클릭 리스너
         binding.adminBtnStart.setOnClickListener{
             //로그인 체크
-            /*if ((applicationContext as AttendApplication).isLoginResult) {
+            if ((applicationContext as AttendApplication).isLoginResult) {
                 //로그인 O
                 val intent = Intent(this, ResultActivity::class.java)
                 startActivity(intent)
@@ -67,7 +67,7 @@ class AdminActivity : AppCompatActivity() {
                 //로그인 X
                 Toast.makeText(this, R.string.login_null, Toast.LENGTH_SHORT).show()
             }
-            Toast.makeText(this, "start button click", Toast.LENGTH_SHORT).show()*/
+            //Toast.makeText(this, "start button click", Toast.LENGTH_SHORT).show()
         }
         //출입체크 조회 버튼 클릭 리스너
         binding.adminBtnSearch.setOnClickListener{

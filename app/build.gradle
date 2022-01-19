@@ -11,6 +11,8 @@ android {
     defaultConfig {
         applicationId "com.example.attend_test"
         minSdkVersion 21
+        vectorDrawables.useSupportLibrary true
+
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
@@ -50,6 +52,13 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'com.googlecode.json-simple:json-simple:1.1'
     implementation 'com.github.lakue119:LakuePagingButton:1.0.0'
+    implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.github.mik3y:usb-serial-for-android:3.4.3'
+    def camerax_version = '1.1.0-alpha07'
+    implementation "androidx.camera:camera-core:$camerax_version"
+    implementation "androidx.camera:camera-camera2:$camerax_version"
+    implementation "androidx.camera:camera-lifecycle:$camerax_version"
+    implementation 'androidx.camera:camera-view:1.0.0-alpha27'
 }

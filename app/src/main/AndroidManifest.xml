@@ -15,10 +15,12 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".activity.ConfigUserActivity"></activity>
+        <activity android:name=".activity.AttendInfoActivity"></activity>
+        <activity android:name=".zxing.CustomScannerActivity" />
+        <activity android:name=".zxing.ResultActivity" />
+        <activity android:name=".activity.ConfigUserActivity" />
         <activity android:name=".activity.ConfigActivity" />
         <activity android:name=".activity.AttendActivity" />
-
         <activity
             android:name=".activity.AdminActivity"
             android:exported="true"
@@ -35,6 +37,9 @@
                 android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
                 android:resource="@xml/usb_device_filter" />
         </activity>
+        <activity android:name=".MainActivity" />
+
+        <service android:name=".SerialService" />
     </application>
 
 </manifest>

@@ -8,3 +8,14 @@
     <dimen name="camera_line_height">550dp</dimen>
     <dimen name="camera_line_text_margin_bottom">13dp</dimen>
 </resources>
+
+<!--
+<resources>
+    <dimen name="barcode_width">600dp</dimen>
+    <dimen name="barcode_height">400dp</dimen>
+    <dimen name="camera_line_box_width">550dp</dimen>
+    <dimen name="camera_line_box_height">580dp</dimen>
+    <dimen name="camera_line_width">550dp</dimen>
+    <dimen name="camera_line_height">550dp</dimen>
+    <dimen name="camera_line_text_margin_bottom">13dp</dimen>
+</resources>-->
