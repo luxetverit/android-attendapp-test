@@ -28,11 +28,11 @@ class AttendAdapter : RecyclerView.Adapter<AttendAdapter.ViewHolder?>() {
         } else {
             holder.attend_item.setBackgroundColor(Color.parseColor("#F5F5F5"))
         }
-        holder.attend_id.setText(attendList!![position].IDX)
-        holder.attend_name.setText(attendList!![position].NAME)
-        holder.attend_nat.setText(attendList!![position].NAT)
-        holder.attend_date.setText(attendList!![position].DATETIME)
-        holder.attend_data.setText(attendList!![position].TEMPERATURE)
+        holder.attend_id.text = attendList!![position].IDX
+        holder.attend_name.text = attendList!![position].NAME
+        holder.attend_nat.text = attendList!![position].NAT
+        holder.attend_date.text = attendList!![position].DATETIME
+        holder.attend_data.text = attendList!![position].TEMPERATURE
         if (position >= 1) {
             if (attendList!![position].CODEDATA != null) {
                 holder.itemView.setOnClickListener(View.OnClickListener { v: View ->

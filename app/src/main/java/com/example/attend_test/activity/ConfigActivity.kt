@@ -51,12 +51,12 @@ class ConfigActivity : AppCompatActivity() {
             finish()
         }
         //언어 클릭 리스너
-        /*binding.configLangBox.setOnClickListener {
+        binding.configLangBox.setOnClickListener {
             val intent = Intent(this, ConfigLangActivity::class.java)
             startActivity(intent)
             overridePendingTransition(0, 0)
             finish()
-        }*/
+        }
         //뒤로가기
         binding.configBack.setOnClickListener { backPressed() }
         binding.configLangTxt.text = getLangType(getConfigLangData(this, "app_lang"))

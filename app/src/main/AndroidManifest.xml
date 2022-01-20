@@ -15,7 +15,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".activity.AttendInfoActivity"></activity>
+        <activity android:name=".activity.ConfigLangActivity"></activity>
+        <activity android:name=".activity.AttendInfoActivity" />
         <activity android:name=".zxing.CustomScannerActivity" />
         <activity android:name=".zxing.ResultActivity" />
         <activity android:name=".activity.ConfigUserActivity" />
