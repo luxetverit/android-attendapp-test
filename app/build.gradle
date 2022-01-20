@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.attend_test"
-        minSdkVersion 21
+        minSdkVersion 26
         vectorDrawables.useSupportLibrary true
 
         targetSdkVersion 31

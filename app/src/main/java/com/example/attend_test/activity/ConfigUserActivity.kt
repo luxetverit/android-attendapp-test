@@ -2,20 +2,21 @@ package com.example.attend_test.activity
 
 import android.app.Dialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
+import android.util.Base64.DEFAULT
+import android.util.Base64.encodeToString
 import android.view.View
 import android.view.Window
-import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import com.example.attend_test.AttendApplication
 import com.example.attend_test.R
@@ -30,6 +31,8 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
+import java.util.Base64
 
 class ConfigUserActivity : AppCompatActivity() {
 
@@ -57,6 +60,7 @@ class ConfigUserActivity : AppCompatActivity() {
     }
 
     //DESIGN UI
+
     fun designUI() {
         binding.userIdResult.text = getConfigData(this, "id")
         binding.userPwResult.text = getConfigData(this, "pw")
@@ -79,7 +83,7 @@ class ConfigUserActivity : AppCompatActivity() {
         }
         //로그인 클릭 리스너
         binding.userLoginModify.setOnClickListener{
-            Toast.makeText(this, " login click ", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, " login click ", Toast.LENGTH_SHORT).show()
             getLogin(
                 binding.userIdResult.text.toString(),
                 binding.userPwResult.text.toString()
@@ -127,6 +131,7 @@ class ConfigUserActivity : AppCompatActivity() {
 
     //델리넷 인터페이스 API 호출
     //login.asp
+
     private fun getLogin(id: String?, pw: String?) {
         val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl((applicationContext as AttendApplication).url.toString())
@@ -135,13 +140,17 @@ class ConfigUserActivity : AppCompatActivity() {
         val api: AttendService = retrofit.create(AttendService::class.java)
 
         //로그인 파라미터
+
+        val bytePassword = pw?.toByteArray(charset("UTF-8"))
+        val encodedPassword = Base64.getEncoder().encodeToString(bytePassword)
+
         val obj = org.json.simple.JSONObject()
         obj["nation"] = (applicationContext as AttendApplication).nation
         obj["docname"] = (applicationContext as AttendApplication).docname
         obj["docver"] = (applicationContext as AttendApplication).docver
         obj["macaddr"] = (applicationContext as AttendApplication).macaddr
         obj["id"] = id
-        obj["pwd"] = pw
+        obj["pwd"] = encodedPassword
         Toast.makeText(this, " login ", Toast.LENGTH_SHORT).show()
         api.getLogin(obj.toString()).enqueue(object : Callback<ResultSaveData?> {
 
